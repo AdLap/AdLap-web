@@ -1,17 +1,43 @@
-import React from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
-import { IntroDesc, IntroLogo, IntroSection } from '../components/introComponents';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { IntroDesc, IntroDescBox, IntroLogo, IntroSection } from '../components/introComponents';
 import { StyledLink } from '../components/globalComponents';
 
 const Intro = () => {
+    const [descVisable, setDescVisable] = useState(false);
+
+    setTimeout(() => {
+        setDescVisable(true)
+    }, 1500);
+
+    const introVariant = {
+        hidden: {
+            opacity: 0
+        },
+        visable: {
+            opacity: 1,
+            transition: {
+                ease: 'linear',
+                duration: 1
+            }
+        },
+        exit: {
+            opacity: 0,
+            x: '100vw',
+            transition: {
+                ease: 'linear',
+                duration: 1
+            }
+        }
+    }
+
     const desc = 'Web Developer Adam Łapacz';
     const descContainer = {
         hidden: { opacity: 0 },
         visable: {
             opacity: 1,
             transition: {
-                delay: 1,
-                staggerChildren: 0.2
+                staggerChildren: 0.08
             }
         }
     };
@@ -21,38 +47,38 @@ const Intro = () => {
     };
 
     return (
-        <IntroSection>
-            <AnimatePresence>
-                {IntroLogo && (
-                    <IntroLogo
-                        key='logo'
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ ease: 'easeOut', duration: 3 }}
-                        exit={{ scale: 500, opacity: 0 }}
-                    >
-                        <StyledLink
-                            to='/home'
-                        >
-                            {`<AdLap />`}
-                        </StyledLink>
-                    </IntroLogo>
-                )}
-            </AnimatePresence>
-            <IntroDesc
-                variants={descContainer}
-                initial='hidden'
-                animate='visable'
+        <IntroSection
+            variants={introVariant}
+            initial='hidden'
+            animate='visable'
+            exit='exit'
+        >
+            <IntroLogo
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ ease: 'easeInOut', duration: 1 }}
+                exit={{ scale: 10, opacity: 0, x: '-300vw', y: '-100vw' }}
             >
-                {desc.split('').map((letter, idx) => (
-                    <motion.span
-                        key={`${letter}-${idx}`}
-                        variants={descLetter}
+                <StyledLink to='/home'>{`<AdLap />`}</StyledLink>
+            </IntroLogo>
+            <IntroDescBox>
+                {descVisable &&
+                    <IntroDesc
+                        variants={descContainer}
+                        initial='hidden'
+                        animate='visable'
                     >
-                        {letter}
-                    </motion.span>
-                ))}
-            </IntroDesc>
+                        {desc.split('').map((letter, idx) => (
+                            <motion.span
+                                key={`${letter}-${idx}`}
+                                variants={descLetter}
+                            >
+                                {letter}
+                            </motion.span>
+                        ))}
+                    </IntroDesc>
+                }
+            </IntroDescBox>
         </IntroSection >
     )
 }
