@@ -4,7 +4,21 @@ import { IntroDesc, IntroLogo, IntroSection } from '../components/introComponent
 import { StyledLink } from '../components/globalComponents';
 
 const Intro = () => {
-    const desc = 'Web Developer Adam Łapacz'
+    const desc = 'Web Developer Adam Łapacz';
+    const descContainer = {
+        hidden: { opacity: 0 },
+        visable: {
+            opacity: 1,
+            transition: {
+                delay: 1,
+                staggerChildren: 0.2
+            }
+        }
+    };
+    const descLetter = {
+        hidden: { opacity: 0 },
+        visable: { opacity: 1 }
+    };
 
     return (
         <IntroSection>
@@ -14,7 +28,7 @@ const Intro = () => {
                         key='logo'
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        transition={{ ease: 'easeInOut', duration: 3 }}
+                        transition={{ ease: 'easeOut', duration: 3 }}
                         exit={{ scale: 500, opacity: 0 }}
                     >
                         <StyledLink
@@ -25,13 +39,15 @@ const Intro = () => {
                     </IntroLogo>
                 )}
             </AnimatePresence>
-            <IntroDesc>
+            <IntroDesc
+                variants={descContainer}
+                initial='hidden'
+                animate='visable'
+            >
                 {desc.split('').map((letter, idx) => (
                     <motion.span
                         key={`${letter}-${idx}`}
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 2, duration: 5, staggerChildren: 0.5 }}
+                        variants={descLetter}
                     >
                         {letter}
                     </motion.span>
