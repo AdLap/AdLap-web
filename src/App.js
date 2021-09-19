@@ -8,6 +8,7 @@ import { theme } from './theme';
 import Intro from './intro/Intro';
 import Home from './home/Home';
 import Burger from './navigation/Burger';
+import Navigation from './navigation/Navigation';
 
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,8 +18,9 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <Normalize />
       <GlobalStyle />
+      <Navigation open={isOpen} onOpen={setIsOpen} />
+      {window.location.pathname != '/' && <Burger open={isOpen} onOpen={setIsOpen} />}
       <AnimatePresence exitBeforeEnter>
-        {window.location.pathname != '/' && <Burger open={isOpen} onOpen={setIsOpen} />}
         <Switch location={location} key={location.key}>
           <Route exact path='/' component={Intro} />
           <Route path='/home' component={Home} />

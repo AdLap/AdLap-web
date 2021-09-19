@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { motion } from  'framer-motion';
+import { motion } from 'framer-motion';
 
 export const StyledBurger = styled(motion.button)`
     width: 2rem;
@@ -14,6 +14,7 @@ export const StyledBurger = styled(motion.button)`
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    z-index: 3;
 
     div {
         width: 2rem;
@@ -21,5 +22,4 @@ export const StyledBurger = styled(motion.button)`
         background: ${({ theme }) => theme.primaryLight};
         transform-origin: 1px;
     }
-
 `;

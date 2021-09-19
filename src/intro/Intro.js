@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { IntroDesc, IntroDescBox, IntroLogo, IntroSection } from './Intro.styled';
 import { StyledLink } from '../components/globalComponents';
@@ -6,9 +6,13 @@ import { StyledLink } from '../components/globalComponents';
 const Intro = () => {
     const [descVisable, setDescVisable] = useState(false);
 
-    setTimeout(() => {
-        setDescVisable(true)
-    }, 1500);
+    useEffect(() => {
+        const animationDelay = setTimeout(() => {
+            setDescVisable(true)
+        }, 1500);
+
+        return () => clearTimeout(animationDelay)
+    }, [])
 
     const introVariant = {
         hidden: {

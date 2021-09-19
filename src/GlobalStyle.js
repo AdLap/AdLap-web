@@ -17,4 +17,8 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Ubuntu', sans-serif;
     background: ${({ theme }) => theme.primaryDark};
   }
+
+  a {
+    text-decoration: none;
+  }
 `;

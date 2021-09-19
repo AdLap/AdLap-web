@@ -5,8 +5,12 @@ import { StyledBurger } from "./Burger.styled";
 const Burger = ({ open, onOpen }) => {
     const burgerVariants = {
         hidden: { opacity: 0 },
-        visable: { opacity: 1 },
-        exit: { opacity: 0 }
+        visable: {
+            opacity: 1,
+            transition: {
+                delay: 1
+            }
+        }
     }
 
     const topVariants = {
@@ -44,7 +48,7 @@ const Burger = ({ open, onOpen }) => {
                 variants={bottomVariants}
                 animate={open ? 'open' : 'close'}
             />
-        </StyledBurger>
+        </StyledBurger >
     );
 }
 

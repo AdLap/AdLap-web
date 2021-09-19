@@ -28,7 +28,7 @@ const GoHomeProgress = styled(Link)`
 
 const Home = () => {
     return (
-        <SectionWorkInProgress>
+        <SectionWorkInProgress id='home'>
             <WorkInProgress>Strona w budowie...</WorkInProgress>
             <GoHomeProgress to='/'>Wróć...</GoHomeProgress>
         </SectionWorkInProgress>
