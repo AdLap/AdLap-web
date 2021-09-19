@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { IntroDesc, IntroDescBox, IntroLogo, IntroSection } from '../components/introComponents';
+import { IntroDesc, IntroDescBox, IntroLogo, IntroSection } from './Intro.styled';
 import { StyledLink } from '../components/globalComponents';
 
 const Intro = () => {

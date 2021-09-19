@@ -1,40 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Switch, Route, useLocation } from 'react-router-dom';
-import { createGlobalStyle } from 'styled-components/macro';
 import { Normalize } from 'styled-normalize';
+import { ThemeProvider } from 'styled-components';
+import { AnimatePresence } from 'framer-motion';
+import { GlobalStyle } from './GlobalStyle';
+import { theme } from './theme';
 import Intro from './intro/Intro';
 import Home from './home/Home';
-import { AnimatePresence } from 'framer-motion';
-
-const GlobalStyle = createGlobalStyle`
-    @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
-
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  body {
-    font-family: 'Ubuntu', sans-serif;
-    background: black;
-  }
-`;
+import Burger from './navigation/Burger';
 
 const App = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <Normalize />
       <GlobalStyle />
-        <AnimatePresence exitBeforeEnter>
-          <Switch location={location} key={location.key}>
-            <Route exact path='/' component={Intro} />
-            <Route path='/home' component={Home} />
-          </Switch>
-        </AnimatePresence>
-    </>
+      <AnimatePresence exitBeforeEnter>
+        {window.location.pathname != '/' && <Burger open={isOpen} onOpen={setIsOpen} />}
+        <Switch location={location} key={location.key}>
+          <Route exact path='/' component={Intro} />
+          <Route path='/home' component={Home} />
+        </Switch>
+      </AnimatePresence>
+    </ThemeProvider>
   );
 }
 

@@ -8,13 +8,12 @@ export const IntroSection = styled(motion.section)`
     flex-direction: column;
     justify-content: center;
     align-items: center;
- 
 `;
 
 export const IntroLogo = styled(motion.h1)`
     font-size: 8vw;
     font-weight: 700;
-    color: gold;
+    color: ${({ theme }) => theme.logoColor};
     cursor: pointer;
     margin: 0;
 `;
@@ -26,5 +25,5 @@ export const IntroDescBox = styled.div`
 
 export const IntroDesc = styled(motion.p)`
     font-size: 4vw;
-    color: #6d0080;
+    color: ${({ theme }) => theme.logoDescColor};
 `;
