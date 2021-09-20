@@ -1,5 +1,6 @@
 Cześć
 
-Jestem Adam i witam na mojej stronie.
+Mam na imię Adam, jestem Frontendowcem i uwielbiam Reacta.
+Tu powstaje moja strona.
 
 Zapraszam do oglądania i kontaktu.
