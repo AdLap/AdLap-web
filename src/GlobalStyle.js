@@ -18,6 +18,14 @@ export const GlobalStyle = createGlobalStyle`
     background: ${({ theme }) => theme.primaryDark};
   }
 
+  section {
+    padding: 1rem;
+
+    @media (min-width: ${({ theme }) => theme.desktop}) {
+      padding: 2rem;
+    }
+  }
+
   a {
     text-decoration: none;
   }

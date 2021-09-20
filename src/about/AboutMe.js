@@ -1,7 +1,7 @@
 import React from "react";
 import InProgress from "../InProgress";
 
-const Home = () => {
+const AboutMe = () => {
     return (
         <>
             <InProgress />
@@ -9,4 +9,4 @@ const Home = () => {
     );
 }
 
-export default Home;
+export default AboutMe;

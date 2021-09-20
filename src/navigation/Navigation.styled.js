@@ -12,8 +12,7 @@ export const StyledNavigation = styled(motion.nav)`
     top: 0;
     left: 0;
     opacity: 0;
-    background: ${({ theme }) => theme.menuBackground};
-    backdrop-filter: blur(4px);
+    padding: 1rem;
 
     a {
         font-size: 2rem;
@@ -26,4 +25,15 @@ export const StyledNavigation = styled(motion.nav)`
             color: ${({ theme }) => theme.primaryHover};
         }
     }
+`;
+
+export const StyledNavBackground = styled(motion.div)`
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: ${({ theme }) => theme.menuBackground};
+    backdrop-filter: blur(4px);
+    overflow: hidden;
 `;

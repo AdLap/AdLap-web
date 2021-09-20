@@ -1,7 +1,13 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-export const IntroSection = styled(motion.section)`
+export const IntroContainer = styled.section`
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+`;
+
+export const IntroSection = styled(motion.div)`
     width: 100vw;
     height: 100vh;
     display: flex;

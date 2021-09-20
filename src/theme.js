@@ -6,5 +6,6 @@ export const theme = {
     logoDescColor: '#6d0080',
     menuBackground: '#000000e3',
 
-    tablet: '700px'
+    tablet: '700px',
+    desktop: '1024px'
 }
