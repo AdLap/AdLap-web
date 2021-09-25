@@ -22,7 +22,7 @@ const App = () => {
       <Normalize />
       <GlobalStyle />
       <Navigation open={isOpen} onOpen={setIsOpen} />
-      {location.pathname != '/' && <Burger open={isOpen} onOpen={setIsOpen} />}
+      {location.pathname !== '/' && <Burger open={isOpen} onOpen={setIsOpen} />}
       <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.key}>
           <Route exact path='/' component={Intro} />

@@ -5,6 +5,7 @@ export const IntroContainer = styled.section`
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+    padding: 0;
 `;
 
 export const IntroSection = styled(motion.div)`
