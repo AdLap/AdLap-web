@@ -16,6 +16,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Ubuntu', sans-serif;
     background: ${({ theme }) => theme.primaryDark};
+    overflow: hidden;
   }
 
   section {
@@ -28,5 +29,6 @@ export const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
+    cursor: pointer;
   }
 `;

@@ -8,6 +8,8 @@ export const theme = {
     errorMessage: '#f00',
     successMessage: '#0f0',
     colorTitle: '#ffd700',
+    footerIcons: '#fff',
+    footerIconsHover: '#0a66c2',
 
     tablet: '768px',
     desktop: '1024px'

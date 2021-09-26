@@ -5,7 +5,6 @@ import styled from "styled-components";
 const SuccessMsg = styled(motion.h2)`
     font-size: 2rem;
     color: ${({ theme }) => theme.successMessage};
-    line-height: 100vh;
 `;
 
 const successVariants = {

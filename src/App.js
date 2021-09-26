@@ -12,6 +12,7 @@ import Home from './home/Home';
 import AboutMe from './about/AboutMe';
 import Portfolio from './portfolio/Portfolio';
 import Contact from './contact/Contact';
+import Footer from './footer/Footer';
 
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,6 +32,7 @@ const App = () => {
           <Route path='/portfolio' component={Portfolio} />
           <Route path='/contact' component={Contact} />
         </Switch>
+        {location.pathname !== '/' && <Footer />}
       </AnimatePresence>
     </ThemeProvider>
   );

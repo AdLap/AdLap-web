@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export const IntroContainer = styled.section`
     width: 100vw;
@@ -23,6 +24,11 @@ export const IntroLogo = styled(motion.h1)`
     color: ${({ theme }) => theme.logoColor};
     cursor: pointer;
     margin: 0;
+`;
+
+export const StyledLink = styled(Link)`
+    text-decoration: none;
+    color: inherit;
 `;
 
 export const IntroDescBox = styled.div`

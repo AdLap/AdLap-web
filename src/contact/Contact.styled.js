@@ -3,12 +3,13 @@ import { motion } from "framer-motion";
 
 export const ContactSection = styled(motion.section)`
     width: 100vw;
-    min-height: 100vh;
+    min-height: calc(100vh - 50px);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 2rem;
+    overflow: hidden;
 `;
 
 export const ContactTitle = styled.h2`

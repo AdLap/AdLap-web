@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { IntroContainer, IntroDesc, IntroDescBox, IntroLogo, IntroSection } from './Intro.styled';
-import { StyledLink } from '../components/globalComponents';
+import { IntroContainer, IntroDesc, IntroDescBox, IntroLogo, IntroSection, StyledLink } from './Intro.styled';
 
 const Intro = () => {
     const [descVisable, setDescVisable] = useState(false);
@@ -34,7 +33,6 @@ const Intro = () => {
             }
         }
     }
-
     const desc = 'Web Developer Adam Łapacz';
     const descContainer = {
         hidden: { opacity: 0 },
