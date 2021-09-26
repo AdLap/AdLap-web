@@ -16,7 +16,7 @@ const Navigation = ({ open, onOpen }) => {
                 delay: .2
             }
         },
-        open: { opacity: 1, zIndex: 0 }
+        open: { opacity: 1, zIndex: 1 }
     }
 
     return (

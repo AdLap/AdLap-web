@@ -1,9 +1,12 @@
-import { Formik } from "formik";
-import React from "react";
+import { ErrorMessage, Formik } from "formik";
+import React, { useState } from "react";
 import * as Yup from 'yup';
-import { Button, ContactSection, Form, Input, Label, TextArea } from "./Contact.styled";
+import { Button, ContactSection, Form, Input, Label, TextArea, ErrorMsg, ContactTitle } from "./Contact.styled";
+import ContactSuccess from "./ContactSuccess";
 
 const Contact = () => {
+    const [success, setSuccess] = useState(false);
+
     const validationSchema = Yup.object().shape({
         name: Yup
             .string()
@@ -18,53 +21,96 @@ const Contact = () => {
             .string()
             .min(20, 'Wiadomość musi mieć co najmniej 20 znaków')
             .required('Wiadomość nie może być pusta')
-    })
+    });
+
+    const contactVariants = {
+        hidden: {
+            opacity: 0
+        },
+        visable: {
+            opacity: 1,
+            transition: {
+                duration: 1,
+                ease: 'easeInOut'
+            }
+        },
+        exit: {
+            opacity: 0,
+            transition: {
+                duration: 1,
+                ease: 'easeInOut'
+            }
+        }
+    };
 
     return (
-        <ContactSection>
-            <Formik
-                initialValues={{ name: '', email: '', message: '' }}
-                validationSchema={validationSchema}
-                onSubmit={(values, { setSubmitting, resetForm }) => {
-                    setTimeout(() => {
-                        alert(JSON.stringify(values));
-                        setSubmitting(false);
-                        resetForm();
-                    }, 500);
-                }}
-            >
-                {
-                    ({ values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting }) => (
-                        <Form onSubmit={handleSubmit}>
-                            <Label htmlFor='name'>Imię</Label>
-                            <Input
-                                name='name'
-                                type='text'
-                                onChange={handleChange}
-                                onBlur={handleBlur}
-                                value={values.name}
-                            />
-                            <Label htmlFor='email'>Email</Label>
-                            <Input
-                                name='email'
-                                type='email'
-                                onChange={handleChange}
-                                onBlur={handleBlur}
-                                value={values.email}
-                            />
-                            <Label htmlFor='message'>Wiadomość</Label>
-                            <TextArea
-                                name='message'
-                                rows='5'
-                                onChange={handleChange}
-                                onBlur={handleBlur}
-                                value={values.message}
-                            />
-                            <Button type='submit' disabled={isSubmitting}>Wyślij</Button>
-                        </Form>
-                    )
-                }
-            </Formik>
+        <ContactSection
+            variants={contactVariants}
+            initial='hidden'
+            animate='visable'
+            exit='exit'
+        >
+            {!success && <ContactTitle>Napisz do mnie:</ContactTitle>}
+            {
+                success ?
+                    <ContactSuccess /> :
+                    <Formik
+                        initialValues={{ name: '', email: '', message: '' }}
+                        validationSchema={validationSchema}
+                        onSubmit={(values, { setSubmitting, resetForm }) => {
+                            setTimeout(() => {
+                                console.log('values::', values);
+                                setSubmitting(false);
+                                resetForm();
+                                setSuccess(true);
+                            }, 500);
+                        }}
+                    >
+                        {
+                            ({ values, handleChange, handleBlur, handleSubmit, isSubmitting }) => (
+                                <Form
+                                    onSubmit={handleSubmit}
+                                    variants={contactVariants}
+                                    initial='hidden'
+                                    animate='visable'
+                                    exit='exit'
+                                >
+                                    <Label htmlFor='name'>Imię
+                                        <ErrorMessage name='name' component={ErrorMsg} />
+                                    </Label>
+                                    <Input
+                                        name='name'
+                                        type='text'
+                                        onChange={handleChange}
+                                        onBlur={handleBlur}
+                                        value={values.name}
+                                    />
+                                    <Label htmlFor='email'>Email
+                                        <ErrorMessage name='email' component={ErrorMsg} />
+                                    </Label>
+                                    <Input
+                                        name='email'
+                                        type='email'
+                                        onChange={handleChange}
+                                        onBlur={handleBlur}
+                                        value={values.email}
+                                    />
+                                    <Label htmlFor='message'>Wiadomość
+                                        <ErrorMessage name='message' component={ErrorMsg} />
+                                    </Label>
+                                    <TextArea
+                                        name='message'
+                                        rows='5'
+                                        onChange={handleChange}
+                                        onBlur={handleBlur}
+                                        value={values.message}
+                                    />
+                                    <Button type='submit' disabled={isSubmitting}>Wyślij</Button>
+                                </Form>
+                            )
+                        }
+                    </Formik>
+            }
         </ContactSection >
     );
 }

@@ -3,16 +3,22 @@ import { motion } from "framer-motion";
 
 export const ContactSection = styled(motion.section)`
     width: 100vw;
-    height: 100vh;
-    
-    @media (min-width: ${({ theme }) => theme.tablet}) {
-        display: flex;
-        justify-content: center;
-        align-self: center;
-    }
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
 `;
 
-export const Form = styled.form`
+export const ContactTitle = styled.h2`
+    font-size: 2rem;
+    color: ${({ theme }) => theme.colorTitle};
+    text-align: center;
+    text-transform: uppercase;
+`;
+
+export const Form = styled(motion.form)`
     width: 100%;
     max-width: 400px;
     height: 100%; 
@@ -27,6 +33,7 @@ export const Form = styled.form`
 
 export const Label = styled.label`
     width: 100%;
+    position: relative;
 `;
 
 export const Input = styled.input`
@@ -39,6 +46,13 @@ export const Input = styled.input`
     &:focus {
         outline: none;
         border-bottom-color: ${({ theme }) => theme.primaryHover};
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+        -webkit-text-fill-color: ${({ theme }) => theme.primaryLight};
+        transition: background-color 5000s ease-in-out 0s;
     }
 `;
 
@@ -72,3 +86,10 @@ export const Button = styled.button`
         border: 1px solid  ${({ theme }) => theme.primaryLight};
     }
 `;
+
+export const ErrorMsg = styled.div`
+    font-size: 1rem;
+    color: ${({ theme }) => theme.errorMessage};
+    position: absolute;
+`;
+

@@ -5,7 +5,10 @@ export const theme = {
     logoColor: '#ffd700',
     logoDescColor: '#6d0080',
     menuBackground: '#000000e3',
+    errorMessage: '#f00',
+    successMessage: '#0f0',
+    colorTitle: '#ffd700',
 
-    tablet: '700px',
+    tablet: '768px',
     desktop: '1024px'
 }
