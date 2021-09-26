@@ -2,21 +2,15 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 export const ContactSection = styled(motion.section)`
-    width: 100vw;
-    min-height: calc(100vh - 50px);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 2rem;
-    overflow: hidden;
 `;
 
 export const ContactTitle = styled.h2`
-    font-size: 2rem;
-    color: ${({ theme }) => theme.colorTitle};
-    text-align: center;
-    text-transform: uppercase;
+    
 `;
 
 export const Form = styled(motion.form)`

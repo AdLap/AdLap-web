@@ -7,17 +7,20 @@ import { Link } from "react-router-dom";
 const Footer = () => {
     const footerVariants = {
         hidden: {
-            y: '100%'
+            //y: '100%'
+            opacity: 0
         },
         visable: {
-            y: 0,
+            // y: 0,
+            opacity: 1,
             transition: {
                 duration: 2,
                 ease: 'easeInOut'
             }
         },
         exit: {
-            y: '100%',
+            //y: '100%',
+            opacity: 0,
             transition: {
                 duration: 1,
                 ease: 'easeInOut'
@@ -37,10 +40,10 @@ const Footer = () => {
                 <Link to='/'>{`< AdLap />`}</Link>
             </FooterLogo>
             <FooterIcons>
-                <a href='https://github.com/AdLap' title='GitHub' target='_blank'>
+                <a href='https://github.com/AdLap' title='GitHub' target='_blank' rel='noreferrer'>
                     <FontAwesomeIcon icon={faGithub} />
                 </a>
-                <a href='https://pl.linkedin.com/in/adam-%C5%82apacz' title='LinkedIn' target='_blank'>
+                <a href='https://pl.linkedin.com/in/adam-%C5%82apacz' title='LinkedIn' target='_blank' rel='noreferrer'>
                     <FontAwesomeIcon icon={faLinkedin} />
                 </a>
             </FooterIcons>

@@ -3,10 +3,14 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 export const IntroContainer = styled.section`
-    width: 100vw;
     height: 100vh;
-    overflow: hidden;
+    width: 100vw;
     padding: 0;
+
+    @media (min-width: ${({theme}) => theme.desktop}) {
+        max-width: unset;
+        margin: 0;
+    }
 `;
 
 export const IntroSection = styled(motion.div)`

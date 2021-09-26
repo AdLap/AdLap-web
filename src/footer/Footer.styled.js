@@ -8,6 +8,11 @@ export const StyledFooter = styled(motion.footer)`
     justify-content: space-around;
     align-items: center;
     overflow: hidden;
+
+    @media (min-width: ${({ theme }) => theme.desktop}) {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
 `;
 
 export const FooterLogo = styled.div`

@@ -3,8 +3,6 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const SectionWorkInProgress = styled.section`
-    width: 100vw;
-    height: 100vh;
     background: black;
     display: flex;
     flex-direction: column;
