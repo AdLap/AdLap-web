@@ -2,11 +2,13 @@ import styled from "styled-components";
 
 export const ItemContainer = styled.div`
     color: ${({theme}) => theme.primaryLight};
-    max-width: 300px;
+    width: 300px;
+    height: 350px;
     border: 1px solid green;
     padding: 1rem;
     display: grid;
     gap: 1rem;
+    grid-template-columns: 100px 150px;
 `;
 
 export const ItemTitle = styled.h3`

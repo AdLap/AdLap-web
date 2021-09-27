@@ -8,7 +8,7 @@ export const StyledNavigation = styled(motion.nav)`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     opacity: 0;
@@ -30,7 +30,7 @@ export const StyledNavigation = styled(motion.nav)`
 export const StyledNavBackground = styled(motion.div)`
     width: 100vw;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     background: ${({ theme }) => theme.menuBackground};

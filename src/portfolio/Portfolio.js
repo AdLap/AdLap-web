@@ -8,7 +8,7 @@ const Portfolio = () => {
 
     useEffect(() => {
         axios.get('https://adlap-9b9e8-default-rtdb.europe-west1.firebasedatabase.app/projects.json')
-            .then(resp => setProjects(Object.entries(resp.data)))
+            .then(resp => setProjects(Object.entries(resp.data).reverse()))
             .catch(error => console.log('error::', error))
     }, [])
     console.log('projects::', projects)
@@ -56,7 +56,7 @@ const Portfolio = () => {
                 {
                     projects.map(project => (
                         <PortfolioItem
-                            key={project[0]}
+                            key={project[1].id}
                             title={project[1].title}
                             img={project[1].img}
                             desc={project[1].description}
@@ -65,34 +65,6 @@ const Portfolio = () => {
                         />
                     ))
                 }
-                {/* <PortfolioItem
-                    title='Oddaj rzeczy'
-                    img=''
-                    desc='Celem projektu jest stworzenie miejsca, w którym każdy będzie mógł oddać niepotrzebne rzeczy zaufanym instytucjom.'
-                    tech='React / React Router / Formik / Yup / CSS Modules / SASS'
-                    link='https://oddaj-rzeczy-5dccc.web.app/'
-                />
-                <PortfolioItem
-                    title='Oddaj rzeczy'
-                    img=''
-                    desc='Celem projektu jest stworzenie miejsca, w którym każdy będzie mógł oddać niepotrzebne rzeczy zaufanym instytucjom.'
-                    tech='React / React Router / Formik / Yup / CSS Modules / SASS'
-                    link='https://oddaj-rzeczy-5dccc.web.app/'
-                />
-                <PortfolioItem
-                    title='Oddaj rzeczy'
-                    img=''
-                    desc='Celem projektu jest stworzenie miejsca, w którym każdy będzie mógł oddać niepotrzebne rzeczy zaufanym instytucjom.'
-                    tech='React / React Router / Formik / Yup / CSS Modules / SASS'
-                    link='https://oddaj-rzeczy-5dccc.web.app/'
-                />
-                <PortfolioItem
-                    title='Oddaj rzeczy'
-                    img=''
-                    desc='Celem projektu jest stworzenie miejsca, w którym każdy będzie mógł oddać niepotrzebne rzeczy zaufanym instytucjom.'
-                    tech='React / React Router / Formik / Yup / CSS Modules / SASS'
-                    link='https://oddaj-rzeczy-5dccc.web.app/'
-                /> */}
             </PortfolioContainer>
         </PortfolioSection>
     );

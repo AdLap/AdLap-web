@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { StyledNavigation, StyledNavBackground } from "./Navigation.styled";
 
 const Navigation = ({ open, onOpen }) => {
+
     const navVariants = {
         hidden: { x: '-100%', opacity: 0 },
         open: { x: 0, opacity: 1 }

@@ -10,7 +10,7 @@ const PortfolioItem = ({ title, img, desc, tech, link }) => {
             </ItemImg>
             <ItemDesc>{desc}</ItemDesc>
             <ItemTech>{tech}</ItemTech>
-            <ItemLink href={link} title={title}>{title}</ItemLink>
+            <ItemLink href={link} title={title} target='_blank'>{title}</ItemLink>
         </ItemContainer>
     );
 }

@@ -62,7 +62,7 @@ const Intro = () => {
                     transition={{ ease: 'easeInOut', duration: 1 }}
                     exit={{ scale: 10, opacity: 0, x: '-300vw', y: '-100vw' }}
                 >
-                    <StyledLink to='/home'>{`<AdLap />`}</StyledLink>
+                    <StyledLink to='/contact'>{`<AdLap />`}</StyledLink>
                 </IntroLogo>
                 <IntroDescBox>
                     {descVisable &&

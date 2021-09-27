@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Switch, Route, useLocation } from 'react-router-dom';
 import { Normalize } from 'styled-normalize';
 import { ThemeProvider } from 'styled-components';
@@ -17,6 +17,9 @@ import Footer from './footer/Footer';
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const body = document.querySelector('body');
+
+  isOpen ? body.style.overflow = 'hidden' : body.style.overflow = 'unset';
 
   return (
     <ThemeProvider theme={theme}>

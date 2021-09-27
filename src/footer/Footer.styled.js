@@ -23,8 +23,6 @@ export const FooterLogo = styled.div`
     
     a {
         color: ${({ theme }) => theme.logoColor};
-        font-size: 1.5rem;
-        margin-left: 1rem;
     }
 `;
 

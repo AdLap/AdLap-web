@@ -36,8 +36,8 @@ const Footer = () => {
             exit='exit'
         >
             <FooterLogo>
-                2021 &copy;
-                <Link to='/'>{`< AdLap />`}</Link>
+                <Link to='/'>{`< AdLap /> `}</Link>
+                &copy; 2021
             </FooterLogo>
             <FooterIcons>
                 <a href='https://github.com/AdLap' title='GitHub' target='_blank' rel='noreferrer'>
