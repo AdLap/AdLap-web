@@ -10,21 +10,22 @@ const Portfolio = () => {
         axios.get('https://adlap-9b9e8-default-rtdb.europe-west1.firebasedatabase.app/projects.json')
             .then(resp => setProjects(Object.entries(resp.data).reverse()))
             .catch(error => console.log('error::', error))
-    }, [])
-    console.log('projects::', projects)
+    }, []);
+
     const portfolioVariants = {
         hidden: {
-            y: '-100vh'
+            opacity: 0
         },
         visable: {
-            y: 0,
+            opacity: 1,
             transition: {
-                duration: 1,
-                ease: 'easeInOut'
+                staggerChildren: 1
+                // duration: 1,
+                // ease: 'easeInOut'
             }
         },
         exit: {
-            y: '-100vh',
+            y: '100vh',
             transition: {
                 duration: 1,
                 ease: 'easeInOut'
@@ -34,28 +35,34 @@ const Portfolio = () => {
 
     const itemVariants = {
         hidden: {
-            y: '-100vh'
+            opacity: '0'
         },
         visable: {
-            y: 0
-        },
-        exit: {
-            y: '-100vh'
+            opacity: 1
         }
+        // exit: {
+        //     x: '-100vw'
+        // }
     };
 
     return (
         <PortfolioSection
-            variants={portfolioVariants}
-            initial='hidden'
-            animate='visable'
-            exit='exit'
+            // variants={portfolioVariants}
+            // initial='hidden'
+            // animate='visable'
+            // exit='exit'
         >
             <PortfolioTitle>Portfolio:</PortfolioTitle>
             <PortfolioContainer>
                 {
-                    projects.map(project => (
+                    projects.map((project, idx) => (
                         <PortfolioItem
+                            initial={{ x: '-100vw' }}
+                            animate={{ x: 0 }}
+                            transition={{
+                                duration: 1,
+                                delay: 1 + idx
+                            }}
                             key={project[1].id}
                             title={project[1].title}
                             img={project[1].img}

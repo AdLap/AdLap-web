@@ -1,7 +1,8 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
-export const ItemContainer = styled.div`
-    color: ${({theme}) => theme.primaryLight};
+export const ItemContainer = styled(motion.div)`
+    color: ${({ theme }) => theme.primaryLight};
     width: 300px;
     height: 350px;
     border: 1px solid green;
