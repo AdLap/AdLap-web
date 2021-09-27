@@ -7,11 +7,11 @@ const Portfolio = () => {
     const [projects, setProjects] = useState([]);
 
     useEffect(() => {
-        axios.get('https://adlap-9b9e8-default-rtdb.europe-west1.firebasedatabase.app/')
-        .then(resp => console.log('resp::', resp))
-        .catch(error => console.log('error::', error))
-    },[])
-
+        axios.get('https://adlap-9b9e8-default-rtdb.europe-west1.firebasedatabase.app/projects.json')
+            .then(resp => setProjects(Object.entries(resp.data)))
+            .catch(error => console.log('error::', error))
+    }, [])
+    console.log('projects::', projects)
     const portfolioVariants = {
         hidden: {
             y: '-100vh'
@@ -53,7 +53,19 @@ const Portfolio = () => {
         >
             <PortfolioTitle>Portfolio:</PortfolioTitle>
             <PortfolioContainer>
-                <PortfolioItem
+                {
+                    projects.map(project => (
+                        <PortfolioItem
+                            key={project[0]}
+                            title={project[1].title}
+                            img={project[1].img}
+                            desc={project[1].description}
+                            tech={project[1].tech}
+                            link={project[1].link}
+                        />
+                    ))
+                }
+                {/* <PortfolioItem
                     title='Oddaj rzeczy'
                     img=''
                     desc='Celem projektu jest stworzenie miejsca, w którym każdy będzie mógł oddać niepotrzebne rzeczy zaufanym instytucjom.'
@@ -80,7 +92,7 @@ const Portfolio = () => {
                     desc='Celem projektu jest stworzenie miejsca, w którym każdy będzie mógł oddać niepotrzebne rzeczy zaufanym instytucjom.'
                     tech='React / React Router / Formik / Yup / CSS Modules / SASS'
                     link='https://oddaj-rzeczy-5dccc.web.app/'
-                />
+                /> */}
             </PortfolioContainer>
         </PortfolioSection>
     );
