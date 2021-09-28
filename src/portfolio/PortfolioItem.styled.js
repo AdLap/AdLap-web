@@ -5,11 +5,17 @@ export const ItemContainer = styled(motion.div)`
     color: ${({ theme }) => theme.primaryLight};
     width: 300px;
     height: 350px;
-    border: 1px solid green;
+    /* border: 1px solid green; */
+  box-shadow: 0 0 12px #1c1c1c;
+  border-radius: 5px;
     padding: 1rem;
-    display: grid;
+    /* display: grid; */
     gap: 1rem;
     grid-template-columns: 100px 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 `;
 
 export const ItemTitle = styled.h3`
@@ -47,4 +53,5 @@ export const ItemLink = styled.a`
     grid-row: 4 / 5;
     grid-column: 1 / 3;
     text-align: center;
+    color: ${({ theme }) => theme.logoColor}
 `;

@@ -9,9 +9,9 @@ export const PortfolioTitle = styled.h2`
     margin: 2rem auto;
 `;
 
-export const PortfolioContainer = styled.div`
+export const PortfolioContainer = styled(motion.div)`
     width: 100%;
-    border: 1px solid red;
+  //  border: 1px solid red;
     display: flex;
     justify-content: center;
     align-items: center;

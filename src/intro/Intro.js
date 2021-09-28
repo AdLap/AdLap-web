@@ -1,17 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { IntroContainer, IntroDesc, IntroDescBox, IntroLogo, IntroSection, StyledLink } from './Intro.styled';
 
 const Intro = () => {
-    const [descVisable, setDescVisable] = useState(false);
-
-    useEffect(() => {
-        const animationDelay = setTimeout(() => {
-            setDescVisable(true)
-        }, 1500);
-
-        return () => clearTimeout(animationDelay)
-    }, [])
 
     const introVariant = {
         hidden: {
@@ -39,6 +30,7 @@ const Intro = () => {
         visable: {
             opacity: 1,
             transition: {
+                delayChildren: 2,
                 staggerChildren: 0.08
             }
         }
@@ -65,22 +57,20 @@ const Intro = () => {
                     <StyledLink to='/contact'>{`<AdLap />`}</StyledLink>
                 </IntroLogo>
                 <IntroDescBox>
-                    {descVisable &&
-                        <IntroDesc
-                            variants={descContainer}
-                            initial='hidden'
-                            animate='visable'
-                        >
-                            {desc.split('').map((letter, idx) => (
-                                <motion.span
-                                    key={`${letter}-${idx}`}
-                                    variants={descLetter}
-                                >
-                                    {letter}
-                                </motion.span>
-                            ))}
-                        </IntroDesc>
-                    }
+                    <IntroDesc
+                        variants={descContainer}
+                        initial='hidden'
+                        animate='visable'
+                    >
+                        {desc.split('').map((letter, idx) => (
+                            <motion.span
+                                key={`${letter}-${idx}`}
+                                variants={descLetter}
+                            >
+                                {letter}
+                            </motion.span>
+                        ))}
+                    </IntroDesc>
                 </IntroDescBox>
             </IntroSection >
         </IntroContainer>
