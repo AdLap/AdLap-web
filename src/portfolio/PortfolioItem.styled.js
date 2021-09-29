@@ -27,10 +27,10 @@ export const ItemImg = styled.div`
     grid-column: 1 / 2;
     justify-self: center;
     cursor: pointer;
-    transition: .5s ease-in-out;
+    transition: .3s ease-in-out;
 
     &:hover {
-        transform: scale(1.5);
+        transform: scale(1.2);
     }
 
     img {
@@ -52,11 +52,25 @@ export const ItemTech = styled.p`
 
 export const ItemLink = styled.a`
     grid-row: 5 / 6;
-    grid-column: 1 / 2;
     text-align: center;
     color: ${({ theme }) => theme.primaryLight};
     font-size: 1.5rem;
-    text-align: right;
+    width: fit-content;
+    height: fit-content;
+    margin-left: 12rem;
+
+    &:hover {
+        color: ${({ theme }) => theme.primaryHover};
+    }
+`;
+
+export const ItemGithubLink = styled.a`
+    grid-row: 5 / 6;
+    text-align: center;
+    color: ${({ theme }) => theme.primaryLight};
+    font-size: 1.5rem;
+    width: fit-content;
+    height: fit-content;
 
     &:hover {
         color: ${({ theme }) => theme.primaryHover};
