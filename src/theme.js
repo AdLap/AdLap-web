@@ -10,6 +10,7 @@ export const theme = {
     colorTitle: '#ffd700',
     footerIcons: '#fff',
     footerIconsHover: '#0a66c2',
+    portfolioLink: '#ffd700',
 
     tablet: '768px',
     desktop: '1024px'

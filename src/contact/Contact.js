@@ -35,11 +35,8 @@ const Contact = () => {
             }
         },
         exit: {
-            opacity: 0,
-            transition: {
-                duration: 1,
-                ease: 'easeInOut'
-            }
+          //  opacity: 0,
+            y: '-100vw'
         }
     };
 

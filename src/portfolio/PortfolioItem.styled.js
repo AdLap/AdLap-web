@@ -53,5 +53,5 @@ export const ItemLink = styled.a`
     grid-row: 4 / 5;
     grid-column: 1 / 3;
     text-align: center;
-    color: ${({ theme }) => theme.logoColor}
+    color: ${({ theme }) => theme.portfolioLink}
 `;

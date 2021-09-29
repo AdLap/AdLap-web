@@ -11,7 +11,6 @@ export const PortfolioTitle = styled.h2`
 
 export const PortfolioContainer = styled(motion.div)`
     width: 100%;
-  //  border: 1px solid red;
     display: flex;
     justify-content: center;
     align-items: center;
