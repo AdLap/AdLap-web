@@ -43,7 +43,7 @@ export const FooterIcons = styled.div`
         }
 
         &:last-of-type:hover {
-            color: ${({ theme }) => theme.footerIconsHover};
+            color: ${({ theme }) => theme.linkedinIconsHover};
         }
     }
 `;

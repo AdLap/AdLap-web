@@ -1,3 +1,5 @@
+import { faEye } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { ItemTitle, ItemContainer, ItemImg, ItemDesc, ItemTech, ItemLink } from "./PortfolioItem.styled";
 
@@ -10,7 +12,9 @@ const PortfolioItem = ({ title, img, desc, tech, link }) => {
             </ItemImg>
             <ItemDesc>{desc}</ItemDesc>
             <ItemTech>{tech}</ItemTech>
-            <ItemLink href={link} title={title} target='_blank'>{title}</ItemLink>
+            <ItemLink href={link} title={title} target='_blank'>
+                <FontAwesomeIcon icon={faEye} />
+            </ItemLink>
         </ItemContainer>
     );
 }

@@ -16,7 +16,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Ubuntu', sans-serif;
     background: ${({ theme }) => theme.primaryDark};
-    //overflow: hidden;
+    color: ${({ theme }) => theme.primaryLight};
   }
 
   section {
@@ -34,7 +34,7 @@ export const GlobalStyle = createGlobalStyle`
 
   h2 {
     font-size: 2rem;
-    color: ${({theme}) => theme.colorTitle};
+    color: ${({ theme }) => theme.colorTitle};
     text-align: center;
     text-transform: uppercase;
   }

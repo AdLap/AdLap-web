@@ -17,15 +17,15 @@ const Portfolio = () => {
 
     const portfolioVariants = {
         hidden: {
-            opacity: 1,
-            scale: 1
+          //  opacity: 1,
+            scale: 0
         },
         visable: {
-            opacity: 1,
+           // opacity: 1,
             scale: 1,
             transition: {
                 when: 'beforeChildren',
-                staggerChildren: 0.3
+                staggerChildren: 0.1
             }
         }
     };
