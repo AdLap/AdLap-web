@@ -55,17 +55,11 @@ const Contact = () => {
                         initialValues={{ name: '', email: '', message: '' }}
                         validationSchema={validationSchema}
                         onSubmit={(values, { setSubmitting, resetForm }) => {
-                            send('AdLap', 'AdLap', values, 'user_ll8Xyyti56HCpjtirE4VV')
-                            .catch(error => alert('Coś poszło nie tak...\n', error.text));
+                            send('AdLap', 'template_AdLap', values, 'user_ll8Xyyti56HCpjtirE4VV')
+                                .catch(error => alert('Coś poszło nie tak...\n', error.text));
                             setSubmitting(false);
                             resetForm();
                             setSuccess(true);
-                            // setTimeout(() => {
-                            //     console.log('values::', values);
-                            //     setSubmitting(false);
-                            //     resetForm();
-                            //     setSuccess(true);
-                            // }, 500);
                         }}
                     >
                         {
