@@ -1,6 +1,5 @@
 import React from "react";
-import InProgress from "../InProgress";
-import { AboutContainer, AboutTitle, Description, Img, ImgContainer } from "./AboutMe.styled";
+import { AboutContainer, AboutTitle, Description, DescriptionList, Img, ImgContainer } from "./AboutMe.styled";
 import img from '../assets/ja2.png';
 import { useState } from "react/cjs/react.development";
 
@@ -43,7 +42,7 @@ const AboutMe = () => {
                     osiągnięcia celu, a zwłaszcza znalezienie rozwiązania sprawia mi ogromną frajdę. Mam satysfakcję, gdy grafika ożywa za pomocą kodu
                     lub dodam nową funkcjonalność, szczególnie gdy uda mi się coś uprościć.
                 </Description>
-                <Description>
+                <DescriptionList>
                     Do tworzenia aplikacji wykorzystuję:
                     <ul>
                         {
@@ -52,7 +51,7 @@ const AboutMe = () => {
                             ))
                         }
                     </ul>
-                </Description>
+                </DescriptionList>
             </AboutContainer>
 
         </section>

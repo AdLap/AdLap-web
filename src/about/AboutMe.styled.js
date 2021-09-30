@@ -46,19 +46,19 @@ export const Description = styled.p`
         }
     }
 
-    &:nth-of-type(2) {
+    &:last-of-type {
         grid-column: 2 / 3;
         grid-row: 2 / 3;
     }
+`;
 
-    &:last-of-type {
+export const DescriptionList = styled.div`
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
+
+    @media (min-width: ${({ theme }) => theme.tablet}) {
         grid-column: 1 / 3;
-        grid-row: 3 / 4;
-
-        @media (min-width: ${({ theme }) => theme.tablet}) {
-            grid-column: 1 / 3;
-            grid-row: 2 / 3;
-        }
+        grid-row: 2 / 3;
     }
 
     ul {
@@ -69,6 +69,5 @@ export const Description = styled.p`
         list-style: none;
         padding-left: 1rem;
     }
-
 `;
 
