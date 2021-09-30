@@ -1,6 +1,7 @@
 import { ErrorMessage, Formik } from "formik";
 import React, { useState } from "react";
 import * as Yup from 'yup';
+import { send } from "emailjs-com";
 import { Button, ContactSection, Form, Input, Label, TextArea, ErrorMsg, ContactTitle } from "./Contact.styled";
 import ContactSuccess from "./ContactSuccess";
 
@@ -54,12 +55,17 @@ const Contact = () => {
                         initialValues={{ name: '', email: '', message: '' }}
                         validationSchema={validationSchema}
                         onSubmit={(values, { setSubmitting, resetForm }) => {
-                            setTimeout(() => {
-                                console.log('values::', values);
-                                setSubmitting(false);
-                                resetForm();
-                                setSuccess(true);
-                            }, 500);
+                            send('AdLap', 'AdLap', values, 'user_ll8Xyyti56HCpjtirE4VV')
+                            .catch(error => alert('Coś poszło nie tak...\n', error.text));
+                            setSubmitting(false);
+                            resetForm();
+                            setSuccess(true);
+                            // setTimeout(() => {
+                            //     console.log('values::', values);
+                            //     setSubmitting(false);
+                            //     resetForm();
+                            //     setSuccess(true);
+                            // }, 500);
                         }}
                     >
                         {

@@ -18,7 +18,7 @@ const App = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
   const body = document.querySelector('body');
-
+  
   isOpen ? body.style.overflow = 'hidden' : body.style.overflow = 'unset';
 
   return (
