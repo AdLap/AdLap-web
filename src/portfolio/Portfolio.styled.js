@@ -7,7 +7,5 @@ export const PortfolioContainer = styled(motion.div)`
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 5rem;
 `;
-
-

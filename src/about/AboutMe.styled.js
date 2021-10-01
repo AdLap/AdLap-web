@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 
 export const AboutContainer = styled(motion.div)`
     width: 100%;
+    line-height: 1.5em;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;

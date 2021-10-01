@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 export const HomeContainer = styled(motion.div)`
+    line-height: 1.5em;
     display: grid;
     grid-template-rows: minmax(auto, auto, auto);
     grid-template-columns: repeat(2, 1fr);
@@ -35,11 +36,11 @@ export const Description = styled.p`
 `;
 
 export const ImgDescription = styled.div`
-    border: 1px solid green;
     margin: 0 auto;
     width: 100%;
     max-width: 500px;
     height: 200px;
+    overflow: hidden;
     grid-row: 3 / 4;
     grid-column: 1 / 3;
 
@@ -47,6 +48,11 @@ export const ImgDescription = styled.div`
         height: 100%;
         grid-row: 2 / 3;
         grid-column: 2 / 3;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
     }
 `;
 
@@ -68,11 +74,11 @@ export const Technologies = styled.p`
 `;
 
 export const ImgTech = styled.div`
-    border: 1px solid blue;
     margin: 0 auto;
     width: 100%;
     max-width: 500px;
     height: 200px;
+    
     grid-row: 5 / 6;
     grid-column: 1 / 3;
     
@@ -80,5 +86,10 @@ export const ImgTech = styled.div`
         height: 100%;
         grid-row: 3 / 4;
         grid-column: 1 / 2;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
     }
 `;

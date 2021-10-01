@@ -10,6 +10,7 @@ export const ItemContainer = styled(motion.div)`
     display: grid;
     gap: 1rem;
     grid-template-rows: 1.17rem 100px 80px 40px 1rem;
+    grid-template-columns: 1fr;
 `;
 
 export const ItemTitle = styled.h3`
@@ -52,6 +53,7 @@ export const ItemTech = styled.p`
 
 export const ItemLink = styled.a`
     grid-row: 5 / 6;
+    grid-column: 1 / 2;
     text-align: center;
     color: ${({ theme }) => theme.primaryLight};
     font-size: 1.5rem;
@@ -66,11 +68,13 @@ export const ItemLink = styled.a`
 
 export const ItemGithubLink = styled.a`
     grid-row: 5 / 6;
+    grid-column: 1 / 2;
     text-align: center;
     color: ${({ theme }) => theme.primaryLight};
     font-size: 1.5rem;
     width: fit-content;
     height: fit-content;
+    margin-left: 15rem;
 
     &:hover {
         color: ${({ theme }) => theme.primaryHover};
