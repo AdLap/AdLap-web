@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { StyledNavigation, StyledNavBackground } from "./Navigation.styled";
 
 const Navigation = ({ open, onOpen }) => {
@@ -29,30 +29,30 @@ const Navigation = ({ open, onOpen }) => {
                 variants={navVariants}
                 animate={open ? 'open' : 'hidden'}
             >
-                <Link
+                <NavLink
                     to='/home'
                     onClick={() => onOpen(false)}
                 >
                     Home
-                </Link>
-                <Link
+                </NavLink>
+                <NavLink
                     to='/about'
                     onClick={() => onOpen(false)}
                 >
                     O mnie
-                </Link>
-                <Link
+                </NavLink>
+                <NavLink
                     to='/portfolio'
                     onClick={() => onOpen(false)}
                 >
                     Portfolio
-                </Link>
-                <Link
+                </NavLink>
+                <NavLink
                     to='/contact'
                     onClick={() => onOpen(false)}
                 >
                     Kontakt
-                </Link>
+                </NavLink>
             </StyledNavigation>
         </StyledNavBackground>
     );

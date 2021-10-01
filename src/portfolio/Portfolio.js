@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import { motion } from 'framer-motion';
-import { PortfolioContainer, PortfolioSection, PortfolioTitle } from "./Portfolio.styled";
+import { PortfolioContainer } from "./Portfolio.styled";
 import PortfolioItem from "./PortfolioItem";
 import PortfolioModal from "./PortfolioModal";
 
@@ -67,8 +67,14 @@ const Portfolio = () => {
     ));
 
     return (
-        <PortfolioSection>
-            <PortfolioTitle exit={{ opacity: 0 }}>Portfolio:</PortfolioTitle>
+        <section>
+            <motion.h2
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+            >
+                Portfolio:
+            </motion.h2>
             {
                 projects ?
                     <PortfolioContainer
@@ -93,7 +99,7 @@ const Portfolio = () => {
             {modalImg &&
                 <PortfolioModal img={modalImg} onModalImg={handleModalImg} />
             }
-        </PortfolioSection >
+        </section>
     );
 }
 

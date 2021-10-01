@@ -1,10 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-export const AboutTitle = styled.h2`
-    margin: 2rem auto;
-`;
-
 export const AboutContainer = styled(motion.div)`
     width: 100%;
     display: grid;

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { AboutContainer, AboutTitle, Description, DescriptionList, Img, ImgContainer } from "./AboutMe.styled";
+import { motion } from "framer-motion";
+import { AboutContainer, Description, DescriptionList, Img, ImgContainer } from "./AboutMe.styled";
 import img from '../assets/ja2.png';
 
 const AboutMe = () => {
@@ -14,7 +15,7 @@ const AboutMe = () => {
         'SASS',
         'i inne w zależności od wymagań projektu'
     ])
-    const imgVariants = {
+    const aboutVariants = {
         hidden: { x: 0 },
         visable: {
             x: 0,
@@ -28,24 +29,41 @@ const AboutMe = () => {
         hidden: { x: 2000 },
         visable: { x: 0 }
     }
+    const imgVariants = {
+        hidden: {
+            x: -5000,
+            opacity: 0
+        },
+        visable: {
+            x: 0,
+            opacity: 1,
+            transition: { duration: 1 }
+        }
+    }
 
     return (
         <section>
-            <AboutTitle>O mnie:</AboutTitle>
+            <motion.h2
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+            >
+                O mnie:
+            </motion.h2>
             <AboutContainer
-                variants={imgVariants}
+                variants={aboutVariants}
                 initial='hidden'
                 animate='visable'
                 exit='exit' r>
                 <ImgContainer
-                    variants={childrenVariants}
+                    variants={imgVariants}
                 >
                     <Img src={img} alt='Adam Łapacz' />
                 </ImgContainer>
                 <Description
                     variants={childrenVariants}
                 >
-                    Cześć! <br /> Jestem Adam i zajmuję się frontendem. <br /> Swoją przygodę z programowaniem zacząłem w 2012r. od stworzenia prostej strony opartej o CMS Joomla dla nowo powstającej firmy. Od tamtego czasu hobbystycznie zajmowałem się stronami www i dojrzewało we mnie przekonanie, że chcę profesjonalnie programować aplikacje webowe... <br />
+                    Cześć! <br /> Jestem Adam i zajmuję się frontendem. <br /> Swoją przygodę z programowaniem zacząłem w 2012r. od stworzenia prostej strony opartej o CMS Joomla dla nowo powstającej firmy. Od tamtego czasu hobbystycznie zajmowałem się stronami www i dojrzewało we mnie przekonanie, że powinienem profesjonalnie programować aplikacje webowe... <br />
                     A więc stało się &#x1F60E; &#x1F601;
                 </Description>
                 <Description

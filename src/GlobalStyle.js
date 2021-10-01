@@ -5,6 +5,7 @@ export const GlobalStyle = createGlobalStyle`
 
   html {
     font-size: 16px;
+    line-height: 1.5em;
   }
 
   * {
@@ -37,10 +38,16 @@ export const GlobalStyle = createGlobalStyle`
     color: ${({ theme }) => theme.colorTitle};
     text-align: center;
     text-transform: uppercase;
+    margin: 2rem auto;
   }
 
   a {
     text-decoration: none;
     cursor: pointer;
+    color: inherit;
+  }
+
+  p {
+    text-align: justify;
   }
 `;
