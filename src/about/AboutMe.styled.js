@@ -11,6 +11,10 @@ export const AboutContainer = styled(motion.div)`
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     row-gap: 4rem;
+
+    @media (min-width: ${({ theme }) => theme.tablet}) {
+        grid-template-rows: 380px 216px;
+    }
 `;
 
 export const ImgContainer = styled(motion.div)`
@@ -32,7 +36,7 @@ export const Img = styled.img`
     height: auto;
 `;
 
-export const Description = styled.p`
+export const Description = styled(motion.p)`
     line-height: 1.5em;
     text-align: justify;
     
@@ -47,14 +51,20 @@ export const Description = styled.p`
     }
 
     &:last-of-type {
-        grid-column: 2 / 3;
-        grid-row: 2 / 3;
+        grid-column: 1 / 3;
+        grid-row: 3 / 4;
+
+        @media (min-width: ${({ theme }) => theme.tablet}) {
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+        }
     }
 `;
 
-export const DescriptionList = styled.div`
+export const DescriptionList = styled(motion.div)`
+    line-height: 1.5em;
     grid-column: 1 / 3;
-    grid-row: 3 / 4;
+    grid-row: 4 / 5;
 
     @media (min-width: ${({ theme }) => theme.tablet}) {
         grid-column: 1 / 3;
