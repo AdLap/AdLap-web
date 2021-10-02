@@ -45,7 +45,7 @@ const AboutMe = () => {
         <motion.section
             initial={{ opacity: 1 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0}}
+            exit={{ opacity: 0 }}
         >
             <motion.h2
                 initial={{ opacity: 0 }}
@@ -82,16 +82,13 @@ const AboutMe = () => {
                     variants={childrenVariants}
                 >
                     Do tworzenia aplikacji wykorzystuję:
-                    <ul>
-                        {
-                            tech.map((el, idx) => (
-                                <li key={idx}>{el}</li>
-                            ))
-                        }
-                    </ul>
+                    {
+                        tech.map((el, idx) => (
+                            <li key={idx}><span>&#10004;</span>{el}</li>
+                        ))
+                    }
                 </DescriptionList>
             </AboutContainer>
-
         </motion.section>
     );
 }

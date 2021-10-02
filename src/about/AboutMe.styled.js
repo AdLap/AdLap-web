@@ -10,7 +10,7 @@ export const AboutContainer = styled(motion.div)`
     row-gap: 4rem;
 
     @media (min-width: ${({ theme }) => theme.tablet}) {
-        grid-template-rows: 380px 216px;
+        grid-template-rows: 380px 250px;
     }
 `;
 
@@ -58,7 +58,7 @@ export const Description = styled(motion.p)`
     }
 `;
 
-export const DescriptionList = styled(motion.div)`
+export const DescriptionList = styled(motion.ul)`
     line-height: 1.5em;
     grid-column: 1 / 3;
     grid-row: 4 / 5;
@@ -68,13 +68,12 @@ export const DescriptionList = styled(motion.div)`
         grid-row: 2 / 3;
     }
 
-    ul {
-        padding-top: 2rem;
-    }
-
     li {
         list-style: none;
-        padding-left: 1rem;
+
+        span {
+            margin-right: .5rem;
+        }
     }
 `;
 

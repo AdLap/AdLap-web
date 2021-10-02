@@ -14,7 +14,7 @@ const Contact = () => {
             .string()
             .matches(/^[aA-zZ]+$/, 'Imię nie powinno zawierać spacji i cyfr')
             .min(2, 'Imię musi mieć co najmniej 2 znaki')
-            .required('Podane imię jest nieprawidłowe'),
+            .required('Wpisz imię'),
         email: Yup
             .string()
             .email('Nieprawidłowy adres email')
@@ -22,7 +22,7 @@ const Contact = () => {
         message: Yup
             .string()
             .min(20, 'Wiadomość musi mieć co najmniej 20 znaków')
-            .required('Wiadomość nie może być pusta')
+            .required('Napisz wiadomość')
     });
 
     const contactVariants = {

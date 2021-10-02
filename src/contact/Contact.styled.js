@@ -7,6 +7,12 @@ export const ContactContainer = styled(motion.div)`
     align-items: center;
     flex-direction: column;
     gap: 2rem;
+
+    @media (min-width: ${({ theme }) => theme.tablet}) {
+        height: calc(100vh - 20rem);
+        justify-content: space-evenly;
+        flex-direction: row;
+    }
 `;
 
 export const Form = styled(motion.form)`
