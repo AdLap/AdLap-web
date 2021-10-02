@@ -28,7 +28,7 @@ export const FooterLogo = styled.div`
 
 export const FooterIcons = styled.div`
     height: 100%;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: ${({ theme }) => theme.footerIcons};
     display: flex;
     justify-content: center;

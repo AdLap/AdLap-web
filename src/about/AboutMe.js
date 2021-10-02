@@ -42,7 +42,11 @@ const AboutMe = () => {
     }
 
     return (
-        <section>
+        <motion.section
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0}}
+        >
             <motion.h2
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -54,7 +58,8 @@ const AboutMe = () => {
                 variants={aboutVariants}
                 initial='hidden'
                 animate='visable'
-                exit='exit' r>
+                exit='exit'
+            >
                 <ImgContainer
                     variants={imgVariants}
                 >
@@ -87,7 +92,7 @@ const AboutMe = () => {
                 </DescriptionList>
             </AboutContainer>
 
-        </section>
+        </motion.section>
     );
 }
 

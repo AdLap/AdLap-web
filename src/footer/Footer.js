@@ -36,7 +36,7 @@ const Footer = () => {
             exit='exit'
         >
             <FooterLogo>
-                <Link to='/'>{`< AdLap /> `}</Link>
+                <Link to='/' title='Intro'>{`< AdLap /> `}</Link>
                 &copy; 2021
             </FooterLogo>
             <FooterIcons>

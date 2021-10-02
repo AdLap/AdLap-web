@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { animate, motion } from "framer-motion";
 import { Description, HomeContainer, ImgDescription, ImgTech, Technologies, Welcome } from "./Home.styled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
@@ -7,17 +7,25 @@ import talk from '../assets/talk.png';
 import tech from '../assets/tech.jpg';
 
 const Home = () => {
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visable: { opacity: 1 },
+        exit: { opacity: 0, x: -5000 }
+    }
+
     return (
         <>
-            <section>
-                <motion.h2
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
+            <motion.section
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}>
+                <h2>Home</h2>
+                <HomeContainer
+                    variants={containerVariants}
+                    initial='hidden'
+                    animate='visable'
+                    exit='exit'
                 >
-                    Home
-                </motion.h2>
-                <HomeContainer>
                     <Welcome>
                         <strong>Dobrze trafiłeś</strong>...<br /><span>...jeśli poszukujesz <strong>Frontend Developera &#x1F601;</strong></span>
                     </Welcome>
@@ -40,7 +48,7 @@ const Home = () => {
                         <img src={tech} alt={tech} />
                     </ImgTech>
                 </HomeContainer>
-            </section>
+            </motion.section>
         </>
     );
 }
