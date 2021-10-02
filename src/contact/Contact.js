@@ -2,7 +2,8 @@ import { ErrorMessage, Formik } from "formik";
 import React, { useState } from "react";
 import * as Yup from 'yup';
 import { send } from "emailjs-com";
-import { Button, ContactSection, Form, Input, Label, TextArea, ErrorMsg, ContactTitle } from "./Contact.styled";
+import img from '../assets/ja2.png';
+import { Button, ContactContainer, Form, Input, Label, TextArea, ErrorMsg, ImgContainer } from "./Contact.styled";
 import ContactSuccess from "./ContactSuccess";
 
 const Contact = () => {
@@ -41,73 +42,78 @@ const Contact = () => {
     };
 
     return (
-        <ContactSection
-            variants={contactVariants}
-            initial='hidden'
-            animate='visable'
-            exit='exit'
-        >
-            {!success && <ContactTitle>Napisz do mnie:</ContactTitle>}
-            {
-                success ?
-                    <ContactSuccess /> :
-                    <Formik
-                        initialValues={{ name: '', email: '', message: '' }}
-                        validationSchema={validationSchema}
-                        onSubmit={(values, { setSubmitting, resetForm }) => {
-                            send('AdLap', 'template_AdLap', values, 'user_ll8Xyyti56HCpjtirE4VV')
-                                .catch(error => alert('Coś poszło nie tak...\n', error.text));
-                            setSubmitting(false);
-                            resetForm();
-                            setSuccess(true);
-                        }}
-                    >
-                        {
-                            ({ values, handleChange, handleBlur, handleSubmit, isSubmitting }) => (
-                                <Form
-                                    onSubmit={handleSubmit}
-                                    variants={contactVariants}
-                                    initial='hidden'
-                                    animate='visable'
-                                    exit='exit'
-                                >
-                                    <Label htmlFor='name'>Imię
-                                        <ErrorMessage name='name' component={ErrorMsg} />
-                                    </Label>
-                                    <Input
-                                        name='name'
-                                        type='text'
-                                        onChange={handleChange}
-                                        onBlur={handleBlur}
-                                        value={values.name}
-                                    />
-                                    <Label htmlFor='email'>Email
-                                        <ErrorMessage name='email' component={ErrorMsg} />
-                                    </Label>
-                                    <Input
-                                        name='email'
-                                        type='email'
-                                        onChange={handleChange}
-                                        onBlur={handleBlur}
-                                        value={values.email}
-                                    />
-                                    <Label htmlFor='message'>Wiadomość
-                                        <ErrorMessage name='message' component={ErrorMsg} />
-                                    </Label>
-                                    <TextArea
-                                        name='message'
-                                        rows='5'
-                                        onChange={handleChange}
-                                        onBlur={handleBlur}
-                                        value={values.message}
-                                    />
-                                    <Button type='submit' disabled={isSubmitting}>Wyślij</Button>
-                                </Form>
-                            )
-                        }
-                    </Formik>
-            }
-        </ContactSection >
+        <section>
+            {!success && <h2>Napisz do mnie:</h2>}
+            <ContactContainer
+                variants={contactVariants}
+                initial='hidden'
+                animate='visable'
+                exit='exit'
+            >
+                {
+                    success ?
+                        <ContactSuccess /> :
+                        <Formik
+                            initialValues={{ name: '', email: '', message: '' }}
+                            validationSchema={validationSchema}
+                            onSubmit={(values, { setSubmitting, resetForm }) => {
+                                send('AdLap', 'template_AdLap', values, 'user_ll8Xyyti56HCpjtirE4VV')
+                                    .catch(error => alert('Coś poszło nie tak...\n', error.text));
+                                setSubmitting(false);
+                                resetForm();
+                                setSuccess(true);
+                            }}
+                        >
+                            {
+                                ({ values, handleChange, handleBlur, handleSubmit, isSubmitting }) => (
+                                    <Form
+                                        onSubmit={handleSubmit}
+                                        variants={contactVariants}
+                                        initial='hidden'
+                                        animate='visable'
+                                        exit='exit'
+                                    >
+                                        <Label htmlFor='name'>Imię
+                                            <ErrorMessage name='name' component={ErrorMsg} />
+                                        </Label>
+                                        <Input
+                                            name='name'
+                                            type='text'
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
+                                            value={values.name}
+                                        />
+                                        <Label htmlFor='email'>Email
+                                            <ErrorMessage name='email' component={ErrorMsg} />
+                                        </Label>
+                                        <Input
+                                            name='email'
+                                            type='email'
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
+                                            value={values.email}
+                                        />
+                                        <Label htmlFor='message'>Wiadomość
+                                            <ErrorMessage name='message' component={ErrorMsg} />
+                                        </Label>
+                                        <TextArea
+                                            name='message'
+                                            rows='5'
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
+                                            value={values.message}
+                                        />
+                                        <Button type='submit' disabled={isSubmitting}>Wyślij</Button>
+                                    </Form>
+                                )
+                            }
+                        </Formik>
+                }
+                <ImgContainer>
+                    <img src={img} alt={img} />
+                </ImgContainer>
+            </ContactContainer>
+        </section>
     );
 }
 

@@ -46,6 +46,10 @@ export const ImgDescription = styled.div`
     grid-row: 3 / 4;
     grid-column: 1 / 3;
 
+    @media (min-width: ${({ theme }) => theme.tablet}) {
+        position: relative;
+    }
+
     @media (min-width: ${({ theme }) => theme.desktop}) {
         grid-row: 2 / 3;
         grid-column: 2 / 3;
@@ -54,6 +58,11 @@ export const ImgDescription = styled.div`
     img {
         width: 100%;
         height: auto;
+
+        @media (min-width: ${({ theme }) => theme.tablet}) {
+            position: absolute;
+            top: -65px;
+        }
     }
 `;
 

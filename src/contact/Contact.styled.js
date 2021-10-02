@@ -1,16 +1,12 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-export const ContactSection = styled(motion.section)`
+export const ContactContainer = styled(motion.div)`
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 2rem;
-`;
-
-export const ContactTitle = styled.h2`
-    
 `;
 
 export const Form = styled(motion.form)`
@@ -88,3 +84,13 @@ export const ErrorMsg = styled.div`
     position: absolute;
 `;
 
+export const ImgContainer = styled.div`
+    width: 250px;
+    height: 380px;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+`;
