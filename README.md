@@ -1,6 +1,7 @@
-Cześć
+Cześć,
 
-Mam na imię Adam, jestem Frontendowcem i uwielbiam Reacta.
-Tu powstaje moja strona.
+to jest repo z moją stroną portfolio.
 
-Zapraszam do oglądania i kontaktu.
+Tech: 
+React, React Router, Formik, Yup, Styled-components, Framer Motion, Firebase
+

@@ -109,9 +109,13 @@ const Contact = () => {
                             }
                         </Formik>
                 }
-                <ImgContainer>
-                    <img src={img} alt={img} />
-                </ImgContainer>
+                {
+                    !success &&
+                    <ImgContainer>
+                        <img src={img} alt={img} />
+                    </ImgContainer>
+                }
+
             </ContactContainer>
         </section>
     );
