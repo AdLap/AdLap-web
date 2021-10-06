@@ -2,7 +2,7 @@ import { ErrorMessage, Formik } from "formik";
 import React, { useState } from "react";
 import * as Yup from 'yup';
 import { send } from "emailjs-com";
-import img from '../assets/ja2.png';
+import img from '../assets/ja.jpg';
 import { Button, ContactContainer, Form, Input, Label, TextArea, ErrorMsg, ImgContainer } from "./Contact.styled";
 import ContactSuccess from "./ContactSuccess";
 

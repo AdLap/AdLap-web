@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { AboutContainer, Description, DescriptionList, Img, ImgContainer } from "./AboutMe.styled";
-import img from '../assets/ja2.png';
+import img from '../assets/ja.jpg';
 
 const AboutMe = () => {
     const [tech] = useState([

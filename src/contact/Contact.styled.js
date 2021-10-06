@@ -94,9 +94,12 @@ export const ImgContainer = styled.div`
     width: 250px;
     height: 380px;
     overflow: hidden;
+    position: relative;
+    background: black;
 
     img {
-        width: 100%;
-        height: auto;
+        position: absolute;
+        top: -29px;
+        left: -134px;
     }
 `;
