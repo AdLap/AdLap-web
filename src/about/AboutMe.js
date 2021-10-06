@@ -7,7 +7,6 @@ const AboutMe = () => {
     const [tech] = useState([
         'JavaScript ES6+',
         'React',
-        'React Redux',
         'Context API',
         'REST API',
         'Motion Framer',

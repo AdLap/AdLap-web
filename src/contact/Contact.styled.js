@@ -90,16 +90,16 @@ export const ErrorMsg = styled.div`
     position: absolute;
 `;
 
-export const ImgContainer = styled.div`
-    width: 250px;
-    height: 380px;
+export const ImgContainer = styled(motion.div)`
+    width: 200px;
+    height: 280px;
     overflow: hidden;
     position: relative;
     background: black;
 
     img {
         position: absolute;
-        top: -29px;
-        left: -134px;
+        top: -54px;
+        left: -160px;
     }
 `;

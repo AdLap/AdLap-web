@@ -37,7 +37,7 @@ const Contact = () => {
             }
         },
         exit: {
-            y: '-100vw'
+            y: '-100vh'
         }
     };
 
@@ -111,7 +111,9 @@ const Contact = () => {
                 }
                 {
                     !success &&
-                    <ImgContainer>
+                    <ImgContainer
+                        exit={{ y: -500 }}
+                    >
                         <img src={img} alt={img} />
                     </ImgContainer>
                 }
