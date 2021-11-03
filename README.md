@@ -1,7 +1,5 @@
-Cześć,
 
-to jest repo z moją stroną portfolio.
+Moja strona z portfolio.
 
 Tech: 
 React, React Router, Formik, Yup, Styled-components, Framer Motion, Firebase
-
