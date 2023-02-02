@@ -1,19 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { AboutContainer, Description, DescriptionList, Img, ImgContainer } from "./AboutMe.styled";
 import img from '../assets/ja.jpg';
 
 const AboutMe = () => {
-    const [tech] = useState([
-        'JavaScript ES6+',
+    const tech = [
+        'JavaScript',
         'React',
-        'Context API',
-        'REST API',
+        'Vue.js',
+        'jQuery',
+        'Magento 2',
         'Motion Framer',
         'Styled Components',
         'SASS',
-        'i inne w zależności od wymagań projektu'
-    ])
+        'REST API',
+        'i to nie koniec...'
+    ];
     const aboutVariants = {
         hidden: { x: 0 },
         visable: {
@@ -67,20 +69,19 @@ const AboutMe = () => {
                 <Description
                     variants={childrenVariants}
                 >
-                    Cześć! <br /> Jestem Adam i zajmuję się frontendem. <br /> Swoją przygodę z programowaniem zacząłem w 2012r. od stworzenia prostej strony opartej o CMS Joomla dla nowo powstającej firmy. Od tamtego czasu hobbystycznie zajmowałem się stronami www i dojrzewało we mnie przekonanie, że powinienem profesjonalnie programować aplikacje webowe... <br />
-                    A więc stało się &#x1F60E; &#x1F601;
+                    Swoją przygodę z programowaniem zacząłem w 2012r. od stworzenia prostej strony opartej o CMS Joomla dla nowo powstającej firmy. Od tamtego czasu hobbystycznie zajmowałem się stronami www i dojrzewało we mnie przekonanie, że programowanie aplikacji webowych jest tym <em>co chcę w życiu robić...</em> <br />
+                    <span>A więc stało się &#x1F60E;</span>
                 </Description>
                 <Description
                     variants={childrenVariants}
                 >
-                    Rozwiązywanie problemów, poszukiwanie najlepszej ścieżki do
-                    osiągnięcia celu, a zwłaszcza znalezienie rozwiązania sprawia mi ogromną frajdę. Mam satysfakcję, gdy grafika ożywa za pomocą kodu
-                    lub dodam nową funkcjonalność, szczególnie gdy uda mi się coś uprościć.
+                    Ale nie samą pracą nad bolącymi plecami i męczeniem oczu człowiek żyje &#128521;<br />
+                    
                 </Description>
                 <DescriptionList
                     variants={childrenVariants}
                 >
-                    Do tworzenia aplikacji wykorzystuję:
+                    Technologie, w których pracuję:
                     {
                         tech.map((el, idx) => (
                             <li key={idx}><span>&#10004;</span>{el}</li>
