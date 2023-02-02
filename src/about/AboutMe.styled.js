@@ -36,10 +36,19 @@ export const Img = styled.img`
 export const Description = styled(motion.p)`
     line-height: 1.5em;
     text-align: justify;
+   
+
+    span {
+        margin-top: 20px;
+        text-align: center;
+    }
     
     &:first-of-type {
         grid-column: 1 / 3;
         grid-row: 2 / 3;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
 
         @media (min-width: ${({ theme }) => theme.tablet}) {
             grid-column: 2 / 3;
