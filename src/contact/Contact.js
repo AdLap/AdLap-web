@@ -57,7 +57,7 @@ const Contact = () => {
                             initialValues={{ name: '', email: '', message: '' }}
                             validationSchema={validationSchema}
                             onSubmit={(values, { setSubmitting, resetForm }) => {
-                                send('AdLap', 'template_AdLap', values, 'user_ll8Xyyti56HCpjtirE4VV')
+                                send('AdLap', 'template_AdLap', values, 'AxE3JnpPFN08AbJvQ')
                                     .catch(error => alert('Coś poszło nie tak...\n', error.text));
                                 setSubmitting(false);
                                 resetForm();
