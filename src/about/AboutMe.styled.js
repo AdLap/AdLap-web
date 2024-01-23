@@ -36,11 +36,15 @@ export const Img = styled.img`
 export const Description = styled(motion.p)`
     line-height: 1.5em;
     text-align: justify;
-   
 
     span {
         margin-top: 20px;
         text-align: center;
+    }
+
+    hr {
+        border: none;
+        margin: 10px 0;
     }
     
     &:first-of-type {
@@ -85,4 +89,3 @@ export const DescriptionList = styled(motion.ul)`
         }
     }
 `;
-

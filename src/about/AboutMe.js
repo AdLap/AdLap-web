@@ -5,16 +5,13 @@ import img from '../assets/ja.jpg';
 
 const AboutMe = () => {
     const tech = [
+        'TypeScript',
         'JavaScript',
+        'Next',
         'React',
-        'Vue.js',
-        'jQuery',
-        'Magento 2',
-        'Motion Framer',
+        'Vue',
         'Styled Components',
-        'SASS',
-        'REST API',
-        'i to nie koniec...'
+        'SASS/LESS'
     ];
     const aboutVariants = {
         hidden: { x: 0 },
@@ -66,27 +63,55 @@ const AboutMe = () => {
                 >
                     <Img src={img} alt='Adam Łapacz' />
                 </ImgContainer>
+
                 <Description
                     variants={childrenVariants}
                 >
-                    Swoją przygodę z programowaniem zacząłem w 2012r. od stworzenia prostej strony opartej o CMS Joomla dla nowo powstającej firmy. Od tamtego czasu hobbystycznie zajmowałem się stronami www i dojrzewało we mnie przekonanie, że programowanie aplikacji webowych jest tym <em>co chcę w życiu robić...</em> <br />
-                    <span>A więc stało się &#x1F60E;</span>
+                    Moja historia z tworzeniem stron internetowych zaczęła się w 2012 roku, kiedy zrealizowałem swój pierwszy projekt dla nowo powstałego biznesu. W kolejnych latach pracowałem dorywczo, przyjmując mniejsze zlecenia. Mimo to zawsze kiełkowała we mnie myśl o profesjonalnym zaangażowaniu się w obszar programowania aplikacji webowych.
+                    <hr />
+                    Podjęcie tej drogi okazało się dla mnie nie tylko słuszne, lecz również ekscytujące. Każde nowe wyzwanie staje się dla mnie okazją do rozwoju. Dążę do zdobywania wszechstronnego doświadczenia i doskonale swoje umiejętności, aby stawać się coraz bardziej kompetentnym programistą.
                 </Description>
+
                 <Description
                     variants={childrenVariants}
                 >
-                    Ale nie samą pracą nad bolącymi plecami i męczeniem oczu człowiek żyje &#128521;<br />
-                    
+                    Oczywiście, życie to nie tylko godziny spędzone przed ekranem komputera. Oprócz pracy, znajduję radość w zainteresowaniach, które ożywiają moją codzienność. Pasjonuję się motocyklami i z przyjemnością korzystam z każdej przejażdżki, podczas której mogę na chwilę oderwać się od codziennych spraw. Dodatkowo, strzelectwo to dla mnie nie tylko sposób na relaks, ale także moment skupienia, rozwijający jednocześnie umiejętność koncentracji i precyzji.
+                    <br /><br />
+                    Te różnorodne elementy dodają nowych kolorów mojemu życiu zawodowemu i osobistemu, nadając mu pełniejszy wymiar. 😊
                 </Description>
                 <DescriptionList
                     variants={childrenVariants}
                 >
                     Technologie, w których pracuję:
                     {
-                        tech.map((el, idx) => (
-                            <li key={idx}><span>&#10004;</span>{el}</li>
+
+                        tech.map((el) => (
+                            <li key={el}><span>&#10004;</span>{el}</li>
                         ))
                     }
+                    <li>
+                        <span>&#10004;</span>
+                        <span>
+                            <motion.span
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ delay: 1, duration: .75, repeat: Infinity, repeatType: 'reverse' }}
+                                exit={{ opacity: 0 }}
+                            >.</motion.span>
+                            <motion.span
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ delay: 1.5, duration: .75, repeat: Infinity, repeatType: 'reverse' }}
+                                exit={{ opacity: 0 }}
+                            >.</motion.span>
+                            <motion.span
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ delay: 2, duration: .75, repeat: Infinity, repeatType: 'reverse' }}
+                                exit={{ opacity: 0 }}
+                            >.</motion.span>
+                        </span>
+                    </li>
                 </DescriptionList>
             </AboutContainer>
         </motion.section>
